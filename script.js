@@ -1,5 +1,5 @@
 function getRandomIndex() {
-    return Math.floor(Math.random() * 1000); // The maximum is exclusive and the minimum is inclusive
+    return Math.floor(Math.random() * 1000);
 }
 
 function startGame() {
