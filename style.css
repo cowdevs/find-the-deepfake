@@ -1,0 +1,74 @@
+html, body, .vbox, .hbox {
+    height: 100%;
+    width: 100%
+}
+
+.vbox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    color: #1e1e1e;
+    font-size: 5vw;
+    font-family: "Edu TAS Beginner", cursive;
+}
+
+.button {
+    padding: 0.5vw 1vw;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 10px 10px;
+    font-size: 1.25vw;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    border: 0.2vw solid #1e1e1e;
+    font-family: "Space Mono", monospace;
+}
+
+.button:hover {
+    background-color: #1e1e1e;
+    color: white;
+}
+
+.image-prompt {
+    width: 20%;
+    height: auto;
+}
+
+figure {
+    height: auto;
+    float: right;
+    margin-right: 12.5%;
+    margin-left: 50px;
+    margin-top: 0.5em;
+}
+
+figcaption {
+    font-size: 0.6666666666vw;
+}
+
+section {
+    background-color: black;
+    padding-top: 1em;
+}
+
+.credits {
+    padding-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+    font-size: 0.875vw;
+    text-align:left;
+}
