@@ -12,6 +12,7 @@
 </head>
 
 <body>
+    
 <div class="title" id="titleLabel">
     Find the Deepfake!
 </div>
@@ -19,9 +20,12 @@
     <button onclick="startGame()" class="play-button">Play</button>
 </div>
 <div class="image-display" id="imageDisplay">
-    <button onclick="selectImage('1')" class="image-button"><img id="image1" src="" alt=""></button>
-    <button onclick="selectImage('2')" class="image-button"><img id="image2" src="" alt=""></button>
-    <button onclick="selectImage('3')" class="image-button"><img id="image3" src="" alt=""></button>
+    <button onclick="selectImage('1')" class="image-button" hidden><img id="image1" src="" alt=""></button>
+    <button onclick="selectImage('2')" class="image-button" hidden><img id="image2" src="" alt=""></button>
+    <button onclick="selectImage('3')" class="image-button" hidden><img id="image3" src="" alt=""></button>
+</div>
+<div id="nextButton">
+    <button onclick="nextRound()" class="next-button" hidden>Next</button>
 </div>
 </body>
 

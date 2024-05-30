@@ -1,4 +1,4 @@
-html, body {
+html, body, .image-display {
     height: 100%;
     width: 100%
 }
@@ -12,15 +12,13 @@ html, body {
     left: 50%;
     transform: translateX(-50%);
     height: 22px;
-    display: block;
+    display: inline-block;
 }
 
 .image-display {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-    height: 100%;
 }
 
 .play-button {
@@ -42,7 +40,26 @@ html, body {
     transform: translateX(-50%);
 }
 
-.play-button:hover {
+.next-button {
+    padding: 0.5vw 1vw;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 10px 10px;
+    font-size: 1.25rem;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    border: 0.2vw solid #1e1e1e;
+    font-family: "Space Mono", monospace;
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.play-button:hover, .next-button:hover {
     background-color: #1e1e1e;
     color: white;
 }
