@@ -11,7 +11,7 @@ function startGame() {
 }
 
 function nextRound() {
-    ['image1', 'image2', 'image3'].forEach((imageId, index) => {
+    ['image1', 'image2', 'image3'].forEach((imageId) => {
         document.getElementById(imageId).src = "none";
         document.getElementById(imageId).style.border = "none";
     });
