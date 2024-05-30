@@ -12,19 +12,16 @@
 </head>
 
 <body>
-
-<div class="vbox" id="titleScreen">
-    <div class="title">
-        Find the Deepfake!
-    </div>
-    <button onclick="startGame()" class="button">Play</button>
+<div class="title" id="titleLabel">
+    Find the Deepfake!
 </div>
-<div class="hbox" id="gameScreen">
-    <div class="hbox">
-        <img class="image-prompt" id="image1" src="" alt="">
-        <img class="image-prompt" id="image2" src="" alt="">
-        <img class="image-prompt" id="image3" src="" alt="">
-    </div>
+<div id="titleButton">
+    <button onclick="startGame()" class="play-button">Play</button>
+</div>
+<div class="image-display" id="imageDisplay">
+    <button onclick="selectImage('1')" class="image-button"><img id="image1" src="" alt=""></button>
+    <button onclick="selectImage('2')" class="image-button"><img id="image2" src="" alt=""></button>
+    <button onclick="selectImage('3')" class="image-button"><img id="image3" src="" alt=""></button>
 </div>
 </body>
 
