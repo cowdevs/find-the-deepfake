@@ -35,6 +35,7 @@ function nextRound() {
         const imageId = "image" + (i + 1);
         document.getElementById(imageId).parentElement.hidden = true;
         if (i === aiImageIndex) {
+            // cropImage('https://thispersondoesnotexist.com', function(croppedImageUrl) {});
             document.getElementById(imageId).src = 'https://thispersondoesnotexist.com';
             document.getElementById(imageId).onload = function() {
                 imagesLoaded++;
@@ -47,10 +48,8 @@ function nextRound() {
                 }
             };
         } else {
-            const img = new Image();
-            img.src = `real_images/person${getRandomIndex()}.jpg`;
-            img.onload = function() {
-                document.getElementById(imageId).src = this.src;
+            document.getElementById(imageId).src = `real_images/person${getRandomIndex()}.jpg`;
+            document.getElementById(imageId).onload = function() {
                 imagesLoaded++;
                 if (imagesLoaded === 3) {
                     imageIds.forEach((imageId, index) => {
@@ -60,7 +59,7 @@ function nextRound() {
                     });
                 }
             };
-        }
+    }
         document.getElementById(imageId).style.border = "8px solid #1e1e1e";
     }
 }
