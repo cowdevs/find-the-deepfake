@@ -6,15 +6,15 @@ let aiImageIndex;
 const imageIds = ['image1', 'image2', 'image3'];
 
 function cropImage(url, callback) {
-    const img = new Image(1024, 1024);
+    const img = new Image();
     img.crossOrigin = "anonymous";  // This enables CORS
     img.src = url;
     img.onload = function() {
         const canvas = document.createElement('canvas');
-        canvas.width = 1004;
-        canvas.height = 1004;
+        canvas.width = 512;
+        canvas.height = 512;
         const ctx = canvas.getContext('2d');
-        ctx.drawImage(img, 0, 0, 1004, 1004, 0, 0, 1004, 1004);
+        ctx.drawImage(img, 0, 0, 1004, 1004, 0, 0, 512, 512);
         const croppedImageUrl = canvas.toDataURL("image/png");
         callback(croppedImageUrl);
     };
