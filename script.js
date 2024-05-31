@@ -5,20 +5,20 @@ function getRandomIndex() {
 let aiImageIndex;
 const imageIds = ['image1', 'image2', 'image3'];
 
-function cropImage(url, callback) {
-    const img = new Image();
-    img.crossOrigin = "anonymous";  // This enables CORS
-    img.src = 'http://localhost:3000/proxy?url=' + encodeURIComponent(url);
-    img.onload = function() {
-        const canvas = document.createElement('canvas');
-        canvas.width = 512;
-        canvas.height = 512;
-        const ctx = canvas.getContext('2d');
-        ctx.drawImage(img, 0, 0, 1004, 1004, 0, 0, 512, 512);
-        const croppedImageUrl = canvas.toDataURL("image/png");
-        callback(croppedImageUrl);
-    };
-}
+// function cropImage(url, callback) {
+//     const img = new Image();
+//     img.crossOrigin = "anonymous";
+//     img.src = url;
+//     img.onload = function() {
+//         const canvas = document.createElement('canvas');
+//         canvas.width = 512;
+//         canvas.height = 512;
+//         const ctx = canvas.getContext('2d');
+//         ctx.drawImage(img, 0, 0, 1004, 1004, 0, 0, 512, 512);
+//         const croppedImageUrl = canvas.toDataURL("image/jpg");
+//         callback(croppedImageUrl);
+//     };
+// }
 
 function startGame() {
     document.getElementById("titleButton").hidden = true;
@@ -35,19 +35,17 @@ function nextRound() {
         const imageId = "image" + (i + 1);
         document.getElementById(imageId).parentElement.hidden = true;
         if (i === aiImageIndex) {
-            cropImage('https://thispersondoesnotexist.com', function(croppedImageUrl) {
-                document.getElementById(imageId).src = croppedImageUrl;
-                document.getElementById(imageId).onload = function() {
-                    imagesLoaded++;
-                    if (imagesLoaded === 3) {
-                        imageIds.forEach((imageId, index) => {
-                            setTimeout(() => {
-                                document.getElementById(imageId).parentElement.hidden = false;
-                            }, index * 500);
-                        });
-                    }
-                };
-            });
+            document.getElementById(imageId).src = 'https://thispersondoesnotexist.com';
+            document.getElementById(imageId).onload = function() {
+                imagesLoaded++;
+                if (imagesLoaded === 3) {
+                    imageIds.forEach((imageId, index) => {
+                        setTimeout(() => {
+                            document.getElementById(imageId).parentElement.hidden = false;
+                        }, index * 500);
+                    });
+                }
+            };
         } else {
             const img = new Image();
             img.src = `real_images/person${getRandomIndex()}.jpg`;
