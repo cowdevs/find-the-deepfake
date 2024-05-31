@@ -50,10 +50,6 @@ function nextRound() {
     });
 }
 
-function isDeepfake(imageId) {
-    return Number(imageId) - 1 === aiImageIndex;
-}
-
 function selectImage(imageId) {
     const selectedImage = document.getElementById('image' + imageId);
 
@@ -61,7 +57,7 @@ function selectImage(imageId) {
         document.getElementById(imageId).parentElement.style.transform = "";
     });
 
-    if (isDeepfake(imageId)) {
+    if (Number(imageId) - 1 === aiImageIndex) {
         selectedImage.style.border = "8px solid #04AA6D";
     } else {
         selectedImage.style.border = "8px solid crimson";
