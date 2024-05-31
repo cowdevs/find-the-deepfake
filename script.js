@@ -48,8 +48,18 @@ function nextRound() {
                 }
             };
         } else {
-            document.getElementById(imageId).src = `real_images/person${getRandomIndex()}.jpg`;
-            document.getElementById(imageId).onload = function() {
+            const img = new Image();
+            img.src = `real_images/person${getRandomIndex()}.jpg`;
+            img.onload = function() {
+                const canvas = document.createElement('canvas');
+                const ctx = canvas.getContext('2d');
+                canvas.width = 512;
+                canvas.height = 512;
+                ctx.drawImage(img, 0, 0);
+                ctx.font = "9px Arial";
+                ctx.fillStyle = "black";
+                ctx.fillText("StyleGAN2 (Karras et al.)", 410, 508);
+                document.getElementById(imageId).src = canvas.toDataURL("image/jpg");
                 imagesLoaded++;
                 if (imagesLoaded === 3) {
                     imageIds.forEach((imageId, index) => {
@@ -59,7 +69,7 @@ function nextRound() {
                     });
                 }
             };
-    }
+        }
         document.getElementById(imageId).style.border = "8px solid #1e1e1e";
     }
 }
