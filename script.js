@@ -52,11 +52,13 @@ function nextRound() {
         imageButton.style.pointerEvents = "auto";
 
         if (i === aiImageIndex) {
-            imageElement.src = 'https://thispersondoesnotexist.com'
-            imagesLoaded++;
-            if (imagesLoaded === 3) {
-                revealImages();
-            }
+            imageElement.src = 'https://thispersondoesnotexist.com';
+            imageElement.onload = function() {
+                imagesLoaded++;
+                if (imagesLoaded === 3) {
+                    revealImages();
+                }
+            };
         } else {
             loadImage(imageId, `https://raw.githubusercontent.com/cowdevs/find-the-deepfake-data/main/real_images/person${getRandomIndex()}.png`, () => {
                 imagesLoaded++;
