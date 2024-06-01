@@ -2,11 +2,11 @@ function getRandomIndex() {
     return Math.floor(Math.random() * 1000);
 }
 
-let aiImageIndex;
 
 function startGame() {
     document.getElementById("titleButton").hidden = true;
     document.getElementById("titleLabel").style.top = "15%";
+    document.getElementById("roundLabel").hidden = false;
     nextRound()
 }
 
@@ -37,7 +37,17 @@ function loadImage(imageId, src, callback) {
     };
 }
 
+let aiImageIndex;
+let currentRound = 0;
+const numRounds = 10;
+
 function nextRound() {
+    if (currentRound === numRounds) {
+        return;
+    }
+
+    currentRound += 1;
+    document.getElementById("roundLabel").innerText = currentRound + "/" + numRounds;
     document.getElementById("nextButton").hidden = true;
 
     aiImageIndex = Math.floor(Math.random() * 3);
@@ -67,6 +77,10 @@ function nextRound() {
                 }
             });
         }
+    }
+
+    if (currentRound === numRounds - 1) {
+        document.getElementById("nextButton").firstElementChild.innerText = 'Finish';
     }
 }
 

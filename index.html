@@ -3,21 +3,21 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Edu TAS Beginner' rel='stylesheet'>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Edu TAS Beginner'>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Space+Mono">
     <title>Find the Deepfake</title>
     <link rel="icon" href="favicon.png">
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </head>
-
 <body>
-    
+
+<div class="round" id="roundLabel" hidden></div>
 <div class="title" id="titleLabel">
     Find the Deepfake!
 </div>
 <div id="titleButton">
-    <button onclick="startGame()" class="play-button">Play</button>
+    <button onclick="startGame()" class="button play-button">Play</button>
 </div>
 <div class="image-display" id="imageDisplay">
     <button onclick="selectImage('image1')" class="image-button" hidden><img id="image1" src="" alt=""></button>
@@ -25,8 +25,8 @@
     <button onclick="selectImage('image3')" class="image-button" hidden><img id="image3" src="" alt=""></button>
 </div>
 <div id="nextButton" hidden>
-    <button onclick="nextRound()" class="next-button">Next</button>
+    <button onclick="nextRound()" class="button next-button">Next</button>
 </div>
-</body>
 
+</body>
 </html>
