@@ -2,7 +2,6 @@ function getRandomIndex() {
     return Math.floor(Math.random() * 1000);
 }
 
-
 function startGame() {
     document.getElementById("titleButton").hidden = true;
     document.getElementById("titleLabel").style.top = "15%";
@@ -39,7 +38,7 @@ function loadImage(imageId, src, callback) {
 
 let aiImageIndex;
 let currentRound = 0;
-const numRounds = 10;
+const numRounds = 5;
 
 function nextRound() {
     if (currentRound === numRounds) {
