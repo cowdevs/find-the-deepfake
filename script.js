@@ -49,7 +49,8 @@ function nextRound() {
             };
         } else {
             const img = new Image();
-            img.src = `real_images/person${getRandomIndex()}.png`;
+            img.crossOrigin = "anonymous";
+            img.src = `https://raw.githubusercontent.com/cowdevs/find-the-deepfake-data/main/real_images/person${getRandomIndex()}.png`;
             img.onload = function() {
                 const canvas = document.createElement('canvas');
                 const ctx = canvas.getContext('2d');
