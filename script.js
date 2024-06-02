@@ -4,18 +4,30 @@ function getRandomIndex() {
 
 function startGame() {
     document.getElementById("titleButton").hidden = true;
-    document.getElementById("titleLabel").style.top = "15%";
+    document.getElementById("titleLabel").style.top = "5vh";
     document.getElementById("roundLabel").hidden = false;
     nextRound()
 }
 
 function revealImages() {
+    const timeouts = [];
     for (let i = 0; i < 3; i++) {
         const imageId = "image" + (i + 1);
-        setTimeout(() => {
-            document.getElementById(imageId).parentElement.hidden = false;
-        }, i * 500);
+        const timeout = new Promise(resolve => {
+            setTimeout(() => {
+                document.getElementById(imageId).parentElement.hidden = false;
+                resolve();
+            }, i * 500);
+        });
+        timeouts.push(timeout);
     }
+
+    Promise.all(timeouts).then(() => {
+        for (let i = 0; i < 3; i++) {
+            const imageId = "image" + (i + 1);
+            document.getElementById(imageId).parentElement.style.pointerEvents = "auto";
+        }
+    });
 }
 
 function loadImage(imageId, src, callback) {
@@ -36,15 +48,12 @@ function loadImage(imageId, src, callback) {
     };
 }
 
+const numRounds = 5;
 let aiImageIndex;
 let currentRound = 0;
-const numRounds = 5;
+let numCorrect = 0;
 
 function nextRound() {
-    if (currentRound === numRounds) {
-        return;
-    }
-
     currentRound += 1;
     document.getElementById("roundLabel").innerText = currentRound + "/" + numRounds;
     document.getElementById("nextButton").hidden = true;
@@ -58,7 +67,7 @@ function nextRound() {
         imageElement.style.border = "8px solid #1e1e1e";
         imageButton.style.transform = "";
         imageButton.hidden = true;
-        imageButton.style.pointerEvents = "auto";
+        imageButton.style.pointerEvents = "none";
 
         if (i === aiImageIndex) {
             imageElement.src = 'https://thispersondoesnotexist.com';
@@ -77,13 +86,13 @@ function nextRound() {
             });
         }
     }
-
-    if (currentRound === numRounds - 1) {
-        document.getElementById("nextButton").firstElementChild.innerText = 'Finish';
-    }
 }
 
 function selectImage(selectedImageID) {
+    if (selectedImageID === "image" + (aiImageIndex + 1)) {
+        numCorrect++;
+    }
+
     for (let i = 0; i < 3; i++) {
         const imageId = "image" + (i + 1);
         if (imageId !== selectedImageID) {
@@ -98,5 +107,27 @@ function selectImage(selectedImageID) {
     }
 
     document.getElementById(selectedImageID).parentElement.style.transform = "scale(1.1)";
-    document.getElementById("nextButton").hidden = false;
+
+    if (currentRound === numRounds) {
+        document.getElementById("finishButton").hidden = false;
+    } else {
+        document.getElementById("nextButton").hidden = false;
+    }
+}
+
+function openPopup() {
+    document.getElementById("popup").hidden = false;
+}
+
+function closePopup() {
+    document.getElementById("popup").hidden = true;
+}
+
+function endGame() {
+    const ranks = ["Failure", "Newbie", "Amateur", "Scholar", "Expert", "Master"];
+    const score = numCorrect + "/" + numRounds;
+    const rank = ranks[Math.min(5, Math.floor(numCorrect / numRounds * 6))];
+
+    localStorage.setItem('score', score);
+    localStorage.setItem('rank', rank);
 }
