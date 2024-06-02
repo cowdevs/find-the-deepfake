@@ -62,15 +62,11 @@ body {
     transform: translateX(-50%);
 }
 
-.next-button, .finish-button {
+.next-button {
     padding: 0.5vw 1vw;
     bottom: 15vh;
     left: 50%;
     transform: translateX(-50%);
-}
-
-.finish-button a {
-    text-decoration: none;
 }
 
 .info-button {

@@ -144,4 +144,6 @@ function endGame() {
 
     localStorage.setItem('score', score);
     localStorage.setItem('rank', rank);
+
+    window.location.href = "end.html";
 }
