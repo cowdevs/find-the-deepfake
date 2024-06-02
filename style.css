@@ -43,7 +43,6 @@ body {
     margin: 10px 10px;
     font-size: 1.25rem;
     transition-duration: 0.4s;
-    cursor: pointer;
     background-color: white;
     border: 0.2vw solid #1e1e1e;
     font-family: "Reddit Mono", monospace;
