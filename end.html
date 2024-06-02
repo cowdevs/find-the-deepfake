@@ -8,6 +8,21 @@
     <title>Results</title>
     <link rel="icon" href="favicon.png">
     <link rel="stylesheet" href="style.css">
+    <script src="confetti.js"></script>
+    <script>
+        const start = () => {
+            setTimeout(function() {
+                confetti.start()
+            }, 1000);
+        };
+        const stop = () => {
+            setTimeout(function() {
+                confetti.stop()
+            }, 5000);
+        };
+        start();
+        stop();
+    </script>
     <script>
         window.onload = function() {
             const score = localStorage.getItem('score');
