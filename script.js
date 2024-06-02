@@ -99,11 +99,13 @@ function selectImage(selectedImageID) {
             document.getElementById(imageId).parentElement.style.transform = "";
             document.getElementById(imageId).parentElement.style.pointerEvents = "none";
         }
-        if (i === aiImageIndex) {
-            document.getElementById(imageId).style.border = "8px solid #04AA6D";
-        } else {
-            document.getElementById(imageId).style.border = "8px solid crimson";
-        }
+        setTimeout(() => {
+            if (i === aiImageIndex) {
+                document.getElementById(imageId).style.border = "8px solid #04AA6D";
+            } else {
+                document.getElementById(imageId).style.border = "8px solid crimson";
+            }
+        }, i * 500);
     }
 
     document.getElementById(selectedImageID).parentElement.style.transform = "scale(1.1)";
@@ -116,11 +118,22 @@ function selectImage(selectedImageID) {
 }
 
 function openPopup() {
-    document.getElementById("popup").hidden = false;
+    const popup = document.getElementById('popup');
+    popup.style.display = 'block';
+    // Use setTimeout to allow the browser to render the popup before starting the animation
+    setTimeout(() => {
+        popup.classList.add('show');
+    }, 20);
 }
 
 function closePopup() {
-    document.getElementById("popup").hidden = true;
+    const popup = document.getElementById('popup');
+    popup.classList.remove('show');
+    // Wait for the transition to finish before setting display to none
+    popup.addEventListener('transitionend', function handler() {
+        popup.style.display = 'none';
+        popup.removeEventListener('transitionend', handler);
+    });
 }
 
 function endGame() {

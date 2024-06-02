@@ -1,161 +1,176 @@
 * {
-  color: #1e1e1e;
+    color: #1e1e1e;
 }
 
 .image-display {
-  height: 100vh;
+    height: 100vh;
 }
 
 body {
-  margin: 0;
+    margin: 0;
 }
 
 .title {
-  font-size: 4vw;
-  font-family: "Edu TAS Beginner", cursive;
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translateX(-50%);
-  height: 22px;
-  display: inline-block;
+    font-size: 4vw;
+    font-family: "Edu TAS Beginner", cursive;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 22px;
+    display: inline-block;
 }
 
 .round {
-  font-size: 3vw;
-  font-family: "Edu TAS Beginner", cursive;
-  position: absolute;
-  top: 5.5vh;
-  left: 10vh;
-  transform: translateX(-50%);
+    font-size: 3vw;
+    font-family: "Edu TAS Beginner", cursive;
+    position: absolute;
+    top: 5.5vh;
+    left: 10vh;
+    transform: translateX(-50%);
 }
 
 .image-display {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .button {
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  margin: 10px 10px;
-  font-size: 1.25rem;
-  transition-duration: 0.4s;
-  cursor: pointer;
-  background-color: white;
-  border: 0.2vw solid #1e1e1e;
-  font-family: "Reddit Mono", monospace;
-  position: absolute;
-  padding: 0.5vw 1vw;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 10px 10px;
+    font-size: 1.25rem;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: white;
+    border: 0.2vw solid #1e1e1e;
+    font-family: "Reddit Mono", monospace;
+    position: absolute;
+    padding: 0.5vw 1vw;
 }
 
 .play-button {
-  padding: 0.5vw 1vw;
-  bottom: 40vh;
-  left: 50%;
-  transform: translateX(-50%);
+    padding: 0.5vw 1vw;
+    bottom: 40vh;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .next-button, .finish-button {
-  padding: 0.5vw 1vw;
-  bottom: 15vh;
-  left: 50%;
-  transform: translateX(-50%);
+    padding: 0.5vw 1vw;
+    bottom: 15vh;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .finish-button a {
-  padding: 0.5vw 1vw;
-  bottom: 15vh;
-  left: 50%;
-  text-decoration: none;
-  transform: translateX(-50%);
+    padding: 0.5vw 1vw;
+    bottom: 15vh;
+    left: 50%;
+    text-decoration: none;
+    transform: translateX(-50%);
 }
 
 .info-button {
-  padding: 0.1vh 0.5vw;
-  right: 5vh;
-  top: 6.5vh;
+    padding: 0.1vh 0.5vw;
+    right: 5vh;
+    top: 6.5vh;
 }
 
 .play-button:hover, .next-button:hover, .info-button:hover {
-  background-color: #1e1e1e;
-  color: white;
+    background-color: #1e1e1e;
+    color: white;
 }
 
 .image-button {
-  width: 20%;
-  border: none;
-  padding: 0;
-  background: none;
-  transition: transform 0.4s ease-in-out;
-  margin: 0 2rem;
+    width: 20%;
+    border: none;
+    padding: 0;
+    background: none;
+    transition: transform 0.4s ease-in-out;
+    margin: 0 2rem;
 }
 
 .image-button:hover {
-  transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 img {
-  width: 100%;
-  height: auto;
+    width: 100%;
+    height: auto;
 }
 
 .popup {
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(255,255,255,0.4);
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(255,255,255,0.4);
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    display: none;
+}
+
+.popup.show {
+    opacity: 1;
+    transform: scale(1);
+    display: block;
 }
 
 .popup-content {
-  background-color: #ffffff;
-  margin: 12% auto;
-  padding: 20px;
-  border: 0.2vw solid #1e1e1e;
-  width: 33.3vw;
+    background-color: #ffffff;
+    margin: 12% auto;
+    padding: 20px;
+    border: 0.2vw solid #1e1e1e;
+    width: 33.3vw;
 }
 
 .close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
 }
 
 .close:hover, .close:focus {
-  text-decoration: none;
-  cursor: pointer;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 h2 {
-  font-family: "Edu TAS Beginner", cursive;
+    font-family: "Edu TAS Beginner", cursive;
 }
 
 p, li {
-  font-family: "Reddit Mono", monospace;
-  font-size: 1em;
+    font-family: "Reddit Mono", monospace;
+    font-size: 1em;
 }
 
 .stats {
-  font-family: "Reddit Mono", monospace;
-  font-size: 2em;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  height: 22px;
-  display: inline-block;
+    font-family: "Reddit Mono", monospace;
+    font-size: 2em;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 22px;
+    display: inline-block;
 }
 
 .score {
-  top: 50vh;
+    top: 50vh;
 }
 
 .rank {
-  top: 55vh
+    top: 55vh
+}
+
+.image-button.slide-up {
+    transform: translateY(100%);
+    transition: transform 0.5s ease-in-out;
 }
