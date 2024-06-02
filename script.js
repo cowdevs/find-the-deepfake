@@ -1,11 +1,14 @@
-function getRandomIndex() {
-    return Math.floor(Math.random() * 1000);
+function getRandomImage() {
+    const randomFolder = ("00" + Math.floor(Math.random() * 70)).slice(-2) + "000"
+    const randomFile = randomFolder.slice(0,2) + ('000'+Math.floor(Math.random() * 1000)).slice(-3)
+    return `https://raw.githubusercontent.com/cowdevs/ffhq-dataset-512/main/images512x512/${randomFolder}/${randomFile}.png`
 }
 
 function startGame() {
     document.getElementById("titleButton").hidden = true;
     document.getElementById("titleLabel").style.top = "5vh";
     document.getElementById("roundLabel").hidden = false;
+    document.getElementById("infoButton").hidden = false;
     nextRound()
 }
 
@@ -78,7 +81,7 @@ function nextRound() {
                 }
             };
         } else {
-            loadImage(imageId, `https://raw.githubusercontent.com/cowdevs/find-the-deepfake-data/main/real_images/person${getRandomIndex()}.png`, () => {
+            loadImage(imageId, getRandomImage(), () => {
                 imagesLoaded++;
                 if (imagesLoaded === 3) {
                     revealImages();
@@ -120,7 +123,6 @@ function selectImage(selectedImageID) {
 function openPopup() {
     const popup = document.getElementById('popup');
     popup.style.display = 'block';
-    // Use setTimeout to allow the browser to render the popup before starting the animation
     setTimeout(() => {
         popup.classList.add('show');
     }, 20);
@@ -129,7 +131,6 @@ function openPopup() {
 function closePopup() {
     const popup = document.getElementById('popup');
     popup.classList.remove('show');
-    // Wait for the transition to finish before setting display to none
     popup.addEventListener('transitionend', function handler() {
         popup.style.display = 'none';
         popup.removeEventListener('transitionend', handler);
