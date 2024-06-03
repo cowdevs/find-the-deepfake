@@ -15,7 +15,7 @@ function revealImages() {
         const imageId = "image" + (i + 1);
         const timeout = new Promise(resolve => {
             setTimeout(() => {
-                document.getElementById(imageId).parentElement.hidden = false;
+                document.getElementById(imageId).style.visibility = "visible";
                 resolve();
             }, i * 500);
         });
@@ -25,7 +25,7 @@ function revealImages() {
     Promise.all(timeouts).then(() => {
         for (let i = 0; i < 3; i++) {
             const imageId = "image" + (i + 1);
-            document.getElementById(imageId).parentElement.style.pointerEvents = "auto";
+            document.getElementById(imageId).style.pointerEvents = "auto";
         }
     });
 }
@@ -59,10 +59,10 @@ function nextRound() {
     for (let i = 0; i < 3; i++) {
         const imageId = "image" + (i + 1);
         const imageElement = document.getElementById(imageId);
-        const imageButton = imageElement.parentElement;
-        imageElement.style.border = "8px solid #1e1e1e";
+        const imageButton = imageElement;
+        imageElement.style.border = "0.5vw solid #1e1e1e";
         imageButton.style.transform = "";
-        imageButton.hidden = true;
+        imageButton.style.visibility = "hidden";
         imageButton.style.pointerEvents = "none";
 
         if (i === aiImageIndex) {
@@ -92,17 +92,17 @@ function selectImage(selectedImageID) {
     for (let i = 0; i < 3; i++) {
         const imageId = "image" + (i + 1);
         if (imageId !== selectedImageID) {
-            document.getElementById(imageId).parentElement.style.transform = "";
-            document.getElementById(imageId).parentElement.style.pointerEvents = "none";
+            document.getElementById(imageId).style.transform = "";
+            document.getElementById(imageId).style.pointerEvents = "none";
         }
         if (i === aiImageIndex) {
-            document.getElementById(imageId).style.border = "8px solid #04AA6D";
+            document.getElementById(imageId).style.border = "0.5vw solid #04AA6D";
         } else {
-            document.getElementById(imageId).style.border = "8px solid crimson";
+            document.getElementById(imageId).style.border = "0.5vw solid crimson";
         }
     }
 
-    document.getElementById(selectedImageID).parentElement.style.transform = "scale(1.1)";
+    document.getElementById(selectedImageID).style.transform = "scale(1.1)";
 
     if (currentRound === numRounds) {
         document.getElementById("finishButton").hidden = false;

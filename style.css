@@ -1,6 +1,7 @@
 html, body {
     width: 100%;
     height: 100%;
+    font-size: 100%;
     margin: 0;
     padding: 0;
 }
@@ -9,6 +10,7 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
+    align-content: center
 }
 
 section {
@@ -16,6 +18,7 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
+    align-content: center;
 }
 
 .title-container {
@@ -26,7 +29,7 @@ section {
 }
 
 .logo {
-    height: 96px;
+    height: 7.5vw;
     width: auto
 }
 
@@ -35,20 +38,20 @@ section {
     align-self: center;
     font-weight: normal;
     color: #1e1e1e;
-    font-size: 64px;
+    font-size: 4vw;
     font-family: "Edu TAS Beginner", cursive;
 }
 
 .subtitle {
     text-align: center;
     font-family: "Reddit Mono", monospace;
-    font-size: 24px;
+    font-size: 2vw;
 }
 
 h3 {
     color: #1e1e1e;
     font-family: "Edu TAS Beginner", cursive;
-    font-size: 24px;
+    font-size: 2vw;
 }
 
 .round {
@@ -56,7 +59,7 @@ h3 {
     align-self: center;
     font-weight: normal;
     color: #1e1e1e;
-    font-size: 3em;
+    font-size: 3vw;
     font-family: "Edu TAS Beginner", cursive;
 }
 
@@ -68,7 +71,8 @@ h3 {
         'opsz' 48;
     cursor: pointer;
     transition-duration: 0.4s;
-    transform: scale(1.5);
+    font-size: 4vw;
+    height: auto;
 }
 
 .material-symbols-outlined:hover {
@@ -81,30 +85,29 @@ header {
     height: 10vh;
     display: flex;
     align-items: stretch;
+    align-content: center;
     justify-content: space-around;
 }
 
-.header-left {
+.header-left, .header-right, .header-center {
     color: #1e1e1e;
-    width: 33.3%;
     display: flex;
     align-items: center;
+    align-content: center;
+}
+
+.header-left {
+    width: 33.333333333%;
     justify-content: flex-start;
 }
 
 .header-center {
-    color: #1e1e1e;
     width: 50%;
-    display: flex;
-    align-items: center;
     justify-content: center;
 }
 
 .header-right {
-    color: #1e1e1e;
-    width: 33.3%;
-    display: flex;
-    align-items: center;
+    width: 33.333333333%;
     justify-content: flex-end;
 }
 
@@ -115,7 +118,7 @@ header {
     font-size: 1.25rem;
     transition-duration: 0.4s;
     background-color: white;
-    border: 0.2vw solid #1e1e1e;
+    border: 4px solid #1e1e1e;
     font-family: "Reddit Mono", monospace;
     padding: 0.5vw 1vw;
 }
@@ -127,35 +130,25 @@ header {
 
 .image-group {
     color: #1e1e1e;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    height: 100%;
+    width: 75%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
 }
 
 .image-button {
-    color: #1e1e1e;
     cursor: pointer;
-    width: 20vw;
+    height: 100%;
     border: none;
     padding: 0;
     background: none;
     transition: transform 0.4s ease-in-out;
-    margin: 24px;
 }
 
 .image-button:hover {
     color: #1e1e1e;
     transform: scale(1.1);
-}
-
-img {
-    color: #1e1e1e;
-    width: 100%;
-    height: auto;
 }
 
 .popup-body {
@@ -204,6 +197,7 @@ img {
 }
 
 p, li {
+    font-size: 1vw;
     color: #1e1e1e;
     font-family: "Reddit Mono", monospace;
 }
@@ -227,10 +221,4 @@ p, li {
 .rank {
     color: #1e1e1e;
     top: 55vh
-}
-
-.image-button.slide-up {
-    color: #1e1e1e;
-    transform: translateY(100%);
-    transition: transform 0.5s ease-in-out;
 }
