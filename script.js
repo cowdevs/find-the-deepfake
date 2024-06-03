@@ -15,6 +15,7 @@ function revealImages() {
         const imageId = "image" + (i + 1);
         const timeout = new Promise(resolve => {
             setTimeout(() => {
+                document.getElementById(imageId).classList.add('revealed');
                 document.getElementById(imageId).style.visibility = "visible";
                 resolve();
             }, i * 500);
@@ -60,8 +61,9 @@ function nextRound() {
         const imageId = "image" + (i + 1);
         const imageElement = document.getElementById(imageId);
         const imageButton = imageElement;
-        imageElement.style.border = "0.5vw solid #1e1e1e";
+        imageElement.style.border = "0.4vw solid #1e1e1e";
         imageButton.style.transform = "";
+        imageButton.classList.remove('revealed');
         imageButton.style.visibility = "hidden";
         imageButton.style.pointerEvents = "none";
 
@@ -96,9 +98,9 @@ function selectImage(selectedImageID) {
             document.getElementById(imageId).style.pointerEvents = "none";
         }
         if (i === aiImageIndex) {
-            document.getElementById(imageId).style.border = "0.5vw solid #04AA6D";
+            document.getElementById(imageId).style.border = "0.4vw solid #04AA6D";
         } else {
-            document.getElementById(imageId).style.border = "0.5vw solid crimson";
+            document.getElementById(imageId).style.border = "0.4vw solid crimson";
         }
     }
 
