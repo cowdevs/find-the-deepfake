@@ -1,52 +1,123 @@
-* {
-    color: #1e1e1e;
-}
-
-.image-display {
-    height: 100vh;
-}
-
-body {
+html, body {
+    width: 100%;
+    height: 100%;
     margin: 0;
+    padding: 0;
 }
 
-.title {
-    font-size: 4vw;
-    font-family: "Edu TAS Beginner", cursive;
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translateX(-50%);
-    height: 22px;
-    display: inline-block;
-}
-
-.round {
-    font-size: 3vw;
-    font-family: "Edu TAS Beginner", cursive;
-    position: absolute;
-    top: 5.5vh;
-    left: 10vh;
-    transform: translateX(-50%);
-}
-
-.image-display {
+.center-body {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.button {
+section {
+    height: 33.333333333%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    height: 96px;
+    width: auto
+}
+
+.title {
+    margin: 16px;
+    align-self: center;
+    font-weight: normal;
+    color: #1e1e1e;
+    font-size: 64px;
+    font-family: "Edu TAS Beginner", cursive;
+}
+
+.subtitle {
     text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    margin: 10px 10px;
+    max-width: 52%;
+    font-family: "Reddit Mono", monospace;
+    font-size: 24px;
+}
+
+h3 {
+    color: #1e1e1e;
+    font-family: "Edu TAS Beginner", cursive;
+    font-size: 24px;
+}
+
+.round {
+    margin: 16px;
+    align-self: center;
+    font-weight: normal;
+    color: #1e1e1e;
+    font-size: 3em;
+    font-family: "Edu TAS Beginner", cursive;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 600,
+        'GRAD' 0,
+        'opsz' 48;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    transform: scale(1.5);
+}
+
+.material-symbols-outlined:hover {
+    font-variation-settings: 'FILL' 1
+}
+
+header {
+    color: #1e1e1e;
+    width: 75%;
+    height: 10vh;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-around;
+}
+
+.header-left {
+    color: #1e1e1e;
+    width: 33.3%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.header-center {
+    color: #1e1e1e;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-right {
+    color: #1e1e1e;
+    width: 33.3%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.button {
+    color: #1e1e1e;
+    text-align: center;
+    cursor: pointer;
     font-size: 1.25rem;
     transition-duration: 0.4s;
     background-color: white;
     border: 0.2vw solid #1e1e1e;
     font-family: "Reddit Mono", monospace;
-    position: absolute;
     padding: 0.5vw 1vw;
 }
 
@@ -55,95 +126,91 @@ body {
     color: white;
 }
 
-.play-button {
-    padding: 0.5vw 1vw;
-    bottom: 40vh;
+.image-group {
+    color: #1e1e1e;
+    position: absolute;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
-}
-
-.next-button {
-    padding: 0.5vw 1vw;
-    bottom: 15vh;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.info-button {
-    padding: 0.1vh 0.5vw;
-    right: 5vh;
-    top: 6.5vh;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .image-button {
-    width: 20%;
+    color: #1e1e1e;
+    cursor: pointer;
+    width: 20vw;
     border: none;
     padding: 0;
     background: none;
     transition: transform 0.4s ease-in-out;
-    margin: 0 2rem;
+    margin: 24px;
 }
 
 .image-button:hover {
+    color: #1e1e1e;
     transform: scale(1.1);
 }
 
 img {
+    color: #1e1e1e;
     width: 100%;
     height: auto;
 }
 
-.popup {
+.popup-body {
+    color: #1e1e1e;
     position: fixed;
     z-index: 1;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
     background-color: rgba(255,255,255,0.4);
     opacity: 0;
     transform: scale(0.9);
     transition: opacity 0.3s ease, transform 0.3s ease;
     display: none;
+    align-items: center;
+    justify-content: center;
 }
 
-.popup.show {
+.popup-body.show {
+    color: #1e1e1e;
     opacity: 1;
     transform: scale(1);
-    display: block;
+    display: flex;
 }
 
 .popup-content {
+    color: #1e1e1e;
     background-color: #ffffff;
-    margin: 12% auto;
     padding: 20px;
     border: 0.2vw solid #1e1e1e;
     width: 33.3vw;
 }
 
-.close {
+.close-button {
     color: #aaaaaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
 }
 
-.close:hover, .close:focus {
+.close-button:hover, .close-button:focus {
+    color: #1e1e1e;
     text-decoration: none;
     cursor: pointer;
 }
 
-h2 {
-    font-family: "Edu TAS Beginner", cursive;
-}
-
 p, li {
+    color: #1e1e1e;
     font-family: "Reddit Mono", monospace;
-    font-size: 1em;
 }
 
 .stats {
+    color: #1e1e1e;
     font-family: "Reddit Mono", monospace;
     font-size: 2em;
     position: absolute;
@@ -154,14 +221,17 @@ p, li {
 }
 
 .score {
+    color: #1e1e1e;
     top: 50vh;
 }
 
 .rank {
+    color: #1e1e1e;
     top: 55vh
 }
 
 .image-button.slide-up {
+    color: #1e1e1e;
     transform: translateY(100%);
     transition: transform 0.5s ease-in-out;
 }

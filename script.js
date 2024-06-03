@@ -1,15 +1,12 @@
+let numRounds = 5;
+let aiImageIndex;
+let currentRound = 0;
+let numCorrect = 0;
+
 function getRandomImage() {
     const randomFolder = ("00" + Math.floor(Math.random() * 70)).slice(-2) + "000"
     const randomFile = randomFolder.slice(0,2) + ('000'+Math.floor(Math.random() * 1000)).slice(-3)
     return `https://raw.githubusercontent.com/cowdevs/ffhq-dataset-512/main/images512x512/${randomFolder}/${randomFile}.png`
-}
-
-function startGame() {
-    document.getElementById("titleButton").hidden = true;
-    document.getElementById("titleLabel").style.top = "5vh";
-    document.getElementById("roundLabel").hidden = false;
-    document.getElementById("infoButton").hidden = false;
-    nextRound()
 }
 
 function revealImages() {
@@ -38,6 +35,7 @@ function loadImage(imageId, src, callback) {
     img.crossOrigin = "anonymous";
     img.src = src;
     img.onload = function() {
+        // Fake watermark hehe :)
         const canvas = document.createElement('canvas');
         const ctx = canvas.getContext('2d');
         canvas.width = 512;
@@ -50,11 +48,6 @@ function loadImage(imageId, src, callback) {
         callback();
     };
 }
-
-const numRounds = 5;
-let aiImageIndex;
-let currentRound = 0;
-let numCorrect = 0;
 
 function nextRound() {
     currentRound += 1;
@@ -102,13 +95,11 @@ function selectImage(selectedImageID) {
             document.getElementById(imageId).parentElement.style.transform = "";
             document.getElementById(imageId).parentElement.style.pointerEvents = "none";
         }
-        setTimeout(() => {
-            if (i === aiImageIndex) {
-                document.getElementById(imageId).style.border = "8px solid #04AA6D";
-            } else {
-                document.getElementById(imageId).style.border = "8px solid crimson";
-            }
-        }, i * 500);
+        if (i === aiImageIndex) {
+            document.getElementById(imageId).style.border = "8px solid #04AA6D";
+        } else {
+            document.getElementById(imageId).style.border = "8px solid crimson";
+        }
     }
 
     document.getElementById(selectedImageID).parentElement.style.transform = "scale(1.1)";
@@ -120,16 +111,16 @@ function selectImage(selectedImageID) {
     }
 }
 
-function openPopup() {
-    const popup = document.getElementById('popup');
-    popup.style.display = 'block';
+function openPopup(popupID) {
+    const popup = document.getElementById(popupID);
+    popup.style.display = 'flex';
     setTimeout(() => {
         popup.classList.add('show');
     }, 20);
 }
 
-function closePopup() {
-    const popup = document.getElementById('popup');
+function closePopup(popupID) {
+    const popup = document.getElementById(popupID);
     popup.classList.remove('show');
     popup.addEventListener('transitionend', function handler() {
         popup.style.display = 'none';

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="">
-
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Results</title>
+    <link rel="icon" href="favicon.svg">
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Edu TAS Beginner'>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Reddit Mono">
-    <title>Results</title>
-    <link rel="icon" href="favicon.png">
     <link rel="stylesheet" href="style.css">
     <script src="confetti.js"></script>
     <script>
@@ -33,14 +33,17 @@
         }
     </script>
 </head>
-<body>
+<body class="center-body">
 
-<div class="title" id="titleLabel">Results</div>
-<div class="stats score" id="scoreLabel">You identified <span id="score">...</span> deepfakes!</div>
-<div class="stats rank" id="rankLabel">You are an AI-detection <span id="rank"><strong>...</strong></span>!</div>
-<div id="titleButton">
-    <button onclick="window.location.href='index.html'" class="button next-button">Play Again</button>
-</div>
+<section>
+    <div class="title-container">
+        <img class="logo" src="favicon.svg" alt="" >
+        <h1 class="title">Results</h1>
+        <p class="subtitle">You identified <span id="score">...</span> deepfakes!
+            You are an AI-detection <span id="rank"><strong>...</strong></span>!</p>
+        <button onclick="window.location.href='index.html'" class="button">Play Again</button>
+    </div>
+</section>
 
 </body>
 </html>

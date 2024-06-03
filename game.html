@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Find the Deepfake</title>
+    <link rel="icon" href="favicon.svg">
+    <link rel="stylesheet" href="style.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Edu TAS Beginner'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Reddit Mono">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />    <script src="script.js"></script>
+    <script src="script.js"></script>
+    <script type="text/javascript">
+        window.onload = nextRound;
+    </script>
+</head>
+<body>
+
+<div class="popup-body" id="infoPopup">
+    <div class="popup-content">
+        <span class="close-button" onclick="closePopup('infoPopup')">&times;</span>
+        <h3>How to Identify a Deepfake</h3>
+        <p>There are many ways to distinguish whether an image is AI-generated or not. Here are a few characteristics you can watch out for to become a better AI detective!</p>
+        <ul>
+            <li><strong>Look at the limbs</strong>: AI is infamous for turning hands, arms, feet, and legs into jumbled-up abominations, from extra fingers to crooked joints. If you spot any abnormal appendages, you can be certain that you&#39;ve found an AI-generated image.</li>
+            <li><strong>Look at the accessories</strong>: Although the AI can generate extremely realistic faces, it struggles with creating clothing and accessories due to problems with symmetry. If you look closely, you might notice unusual headwear, inconsistent earrings, misshapen glasses, and more.</li>
+            <li><strong>Look at the surroundings</strong>: Aside from the main figure, the AI may try to generate other people on the sides. But, these secondary subjects are often horribly disfigured. Coming across one is a very obvious sign of an artificial image.</li>
+            <li><strong>Look at the background</strong>: AI-generated images will <em>always</em> have a blurry background, or simply a solid color. However, these are not definite indicators as they can occur in real images too. Instead, look out for strange patterns and shapes that you wouldn&#39;t expect to see in real life.</li>
+        </ul>
+        <p>These are just a few methods for identifying a deepfake. Remember, you can always rely on your instinct or process of elimination. Good luck!</p>
+    </div>
+</div>
+
+<section>
+    <header>
+        <header class="header-left">
+            <h2 class="round" id="roundLabel">...</h2>
+        </header>
+        <header class="header-center">
+            <h1 class="title" id="titleLabel">Find the Deepfake!</h1>
+        </header>
+        <header class="header-right">
+            <i onclick="openPopup('infoPopup')" class="material-symbols-outlined">help</i>
+        </header>
+    </header>
+</section>
+
+<section>
+    <div class="image-group" id="imageGroup">
+        <button class="image-button" onclick="selectImage('image1')" hidden><img id="image1" src="" alt=""></button>
+        <button class="image-button" onclick="selectImage('image2')" hidden><img id="image2" src="" alt=""></button>
+        <button class="image-button" onclick="selectImage('image3')" hidden><img id="image3" src="" alt=""></button>
+    </div>
+</section>
+
+<section>
+    <button onclick="nextRound()" class="button" id="nextButton" hidden>Next</button>
+    <button onclick="endGame()" class="button" id="finishButton" hidden>Finish</button>
+</section>
+
+</body>
+</html>
