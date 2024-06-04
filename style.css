@@ -84,9 +84,24 @@ section {
 }
 
 .help-button {
+    margin: 0.5vw;
     cursor: pointer;
     transition-duration: 0.4s;
-    height: auto;
+}
+
+.heart {
+    cursor: default;
+    transition-duration: 0.4s;
+}
+
+.heart.on {
+    color: crimson;
+    font-variation-settings: 'FILL' 1;
+}
+
+.heart.off {
+    color: #1e1e1e;
+    font-variation-settings: 'FILL' 0;
 }
 
 .help-button:hover, .help-button:focus {

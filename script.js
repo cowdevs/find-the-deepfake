@@ -1,7 +1,7 @@
-let numRounds = 5;
-let aiImageIndex;
-let currentRound = 0;
+let numLives = 3;
 let numCorrect = 0;
+
+let aiImageIndex;
 
 function getRandomImage() {
     const randomFolder = ("00" + Math.floor(Math.random() * 70)).slice(-2) + "000"
@@ -51,8 +51,6 @@ function loadImage(imageId, src, callback) {
 }
 
 function nextRound() {
-    currentRound += 1;
-    document.getElementById("roundLabel").innerText = currentRound + "/" + numRounds;
     document.getElementById("nextButton").hidden = true;
 
     aiImageIndex = Math.floor(Math.random() * 3);
@@ -89,6 +87,10 @@ function nextRound() {
 function selectImage(selectedImageID) {
     if (selectedImageID === "image" + (aiImageIndex + 1)) {
         numCorrect++;
+    } else {
+        numLives--;
+        document.getElementById("heart" + (numLives + 1)).classList.remove("on")
+        document.getElementById("heart" + (numLives + 1)).classList.add("off")
     }
 
     for (let i = 0; i < 3; i++) {
@@ -106,7 +108,7 @@ function selectImage(selectedImageID) {
 
     document.getElementById(selectedImageID).style.transform = "scale(1.1)";
 
-    if (currentRound === numRounds) {
+    if (numLives === 0) {
         document.getElementById("finishButton").hidden = false;
     } else {
         document.getElementById("nextButton").hidden = false;
@@ -132,8 +134,8 @@ function closePopup(popupID) {
 
 function endGame() {
     const ranks = ["Failure", "Newbie", "Amateur", "Scholar", "Expert", "Master"];
-    const score = numCorrect + "/" + numRounds;
-    const rank = ranks[Math.min(5, Math.floor(numCorrect / numRounds * 6))];
+    const score = numCorrect;
+    const rank = ranks[Math.floor(score / 2)];
 
     localStorage.setItem('score', score);
     localStorage.setItem('rank', rank);
