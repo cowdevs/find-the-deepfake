@@ -89,8 +89,7 @@ function selectImage(selectedImageID) {
         numCorrect++;
     } else {
         numLives--;
-        document.getElementById("heart" + (numLives + 1)).classList.remove("on")
-        document.getElementById("heart" + (numLives + 1)).classList.add("off")
+        document.getElementById("heart" + (numLives + 1)).classList.add("lost")
     }
 
     for (let i = 0; i < 3; i++) {
@@ -133,22 +132,6 @@ function closePopup(popupID) {
 }
 
 function endGame() {
-    const ranks = ["Newbie", "Amateur", "Expert", "Master"];
-    const score = numCorrect;
-    let rank;
-    
-    if (score <= 1) {
-        rank = ranks[0]
-    } else if (1 < score <= 3) {
-        rank = ranks[1]
-    } else if (3 < score <= 6) {
-        rank = ranks[2]
-    } else {
-        rank = ranks[3]
-    }
-    
-    localStorage.setItem('score', score);
-    localStorage.setItem('rank', rank);
-
+    localStorage.setItem('score', numCorrect);
     window.location.href = "end.html";
 }

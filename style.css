@@ -92,14 +92,11 @@ section {
 .heart {
     cursor: default;
     transition-duration: 0.4s;
-}
-
-.heart.on {
     color: crimson;
     font-variation-settings: 'FILL' 1;
 }
 
-.heart.off {
+.heart.lost {
     color: #1e1e1e;
     font-variation-settings: 'FILL' 0;
 }
