@@ -133,10 +133,20 @@ function closePopup(popupID) {
 }
 
 function endGame() {
-    const ranks = ["Failure", "Newbie", "Amateur", "Scholar", "Expert", "Master"];
+    const ranks = ["Newbie", "Amateur", "Expert", "Master"];
     const score = numCorrect;
-    const rank = ranks[Math.floor(score / 2)];
-
+    let rank;
+    
+    if (score <= 1) {
+        rank = ranks[0]
+    } else if (1 < score <= 3) {
+        rank = ranks[1]
+    } else if (3 < score <= 6) {
+        rank = ranks[2]
+    } else {
+        rank = ranks[3]
+    }
+    
     localStorage.setItem('score', score);
     localStorage.setItem('rank', rank);
 
