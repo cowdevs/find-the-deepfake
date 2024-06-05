@@ -116,6 +116,7 @@ function countdownTimeout() {
 
     for (let i = 0; i < 3; i++) {
         const imageId = "image" + (i + 1);
+        document.getElementById(imageId).style.pointerEvents = "none";
         if (i === aiImageIndex) {
             document.getElementById(imageId).style.border = "0.4vw solid #04AA6D";
         } else {
@@ -143,10 +144,7 @@ function selectImage(selectedImageID) {
 
     for (let i = 0; i < 3; i++) {
         const imageId = "image" + (i + 1);
-        if (imageId !== selectedImageID) {
-            document.getElementById(imageId).style.transform = "";
-            document.getElementById(imageId).style.pointerEvents = "none";
-        }
+        document.getElementById(imageId).style.pointerEvents = "none";
         if (i === aiImageIndex) {
             document.getElementById(imageId).style.border = "0.4vw solid #04AA6D";
         } else {
