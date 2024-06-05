@@ -26,17 +26,7 @@
     <script>
         window.onload = function() {
             const score = localStorage.getItem('score');
-            let rank;
-            
-            if (score <= 1) {
-                rank = "Newbie"
-            } else if (1 < score && score <= 3) {
-                rank = "Amateur"
-            } else if (3 < score && score <= 6) {
-                rank = "Expert"
-            } else {
-                rank = "Master"
-            }
+            const rank = localStorage.getItem('rank');
             
             document.getElementById("score").innerText = score;
             document.getElementById("rank").firstElementChild.innerText = rank;

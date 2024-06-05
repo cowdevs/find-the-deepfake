@@ -12,10 +12,8 @@
     <script src="script.js"></script>
     <script type="text/javascript">
         window.onload = () => {
-            loadHearts()
-            nextRound()
+            startGame()
         }
-
     </script>
 </head>
 <body>
@@ -38,7 +36,19 @@
 <div class="popup-body" id="settingsPopup">
     <div class="popup-content" style="text-align: center">
         <span class="close-button" onclick="closePopup('settingsPopup')">&times;</span>
-        <button onclick="window.location.href = 'game.html'" class="menu-button" id="titleButton">New Game</button>
+        <label for="difficulties">Difficulty:</label>
+
+        <select name="difficulties" id="difficulties">
+            <option value="easy">Easy</option>
+            <option value="medium" selected>Normal</option>
+            <option value="hard">Hard</option>
+            <option value="very-hard">Sudden Death</option>
+        </select>
+        <div class="menu-bar">
+            <button onclick="startNewGame()" class="menu-button">New Game</button>
+            <button onclick="window.location.href = 'index.html'" class="menu-button">Quit</button>
+        </div>
+
     </div>
 </div>
     
@@ -68,9 +78,9 @@
     </div>
 </section>
 
-<section>
+<section style="flex-direction: column">
+    <progress id="countdownBar" value="0" hidden></progress>
     <button onclick="nextRound()" id="nextButton" hidden>Next</button>
-    <button onclick="endGame()" id="finishButton" hidden>Finish</button>
 </section>
 
 </body>

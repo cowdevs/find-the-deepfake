@@ -169,8 +169,16 @@ button {
 }
 
 .menu-button {
-    font-size: 0.75vw;
-    padding: 0.375vw 0.75vw;
+    margin: 0 1vw;
+    font-size: 0.8vw;
+    flex: 1;
+}
+
+.menu-bar {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
 }
 
 button:hover, button:focus {
@@ -229,24 +237,24 @@ button:hover, button:focus {
 
 .popup-content {
     color: #1e1e1e;
-    background-color: #ffffff;
+    background-color: white;
     padding: 20px;
     border: 0.25vw solid #1e1e1e;
-    width: 32vw;
+    width: 33.3333333vw;
 }
 
 h3 {
     color: #1e1e1e;
     font-family: "Edu TAS Beginner", cursive;
     font-size: 1.5vw;
-    margin: 1vw 0;
+    margin: 1vw;
 }
 
 p, li {
     color: #1e1e1e;
     font-family: "Reddit Mono", monospace;
-    font-size: 0.75vw;
-    margin: 1vw 0;
+    font-size: 0.8vw;
+    margin: 1vw;
 }
 
 .close-button {
@@ -280,4 +288,18 @@ p, li {
 .rank {
     color: #1e1e1e;
     top: 55vh
+}
+
+progress {
+    border: 0.25vw solid #1e1e1e;
+    transform: rotate(180deg);
+    width: 60vw;
+    height: 2vh;
+}
+
+progress::-webkit-progress-bar {
+    background-color: #1e1e1e;
+}
+progress::-webkit-progress-value {
+    background-color: white;
 }
