@@ -3,10 +3,26 @@ let numCorrect = 0;
 
 let aiImageIndex;
 
+function loadHearts() {
+    for (let i = 0; i < numLives; i++) {
+        const heart = document.createElement("i");
+        heart.classList.add("material-symbols-outlined", "heart");
+        heart.id = "heart" + (i + 1);
+        heart.style.fontSize = "2vw";
+        heart.innerText = "favorite";
+        document.getElementById("heartsContainer").appendChild(heart);
+    }
+}
+
+function startGame() {
+    nextRound();
+    loadHearts();
+}
+
 function getRandomImage() {
-    const randomFolder = ("00" + Math.floor(Math.random() * 70)).slice(-2) + "000"
-    const randomFile = randomFolder.slice(0,2) + ('000'+Math.floor(Math.random() * 1000)).slice(-3)
-    return `https://raw.githubusercontent.com/cowdevs/ffhq-dataset-512/main/images512x512/${randomFolder}/${randomFile}.png`
+    const randomFolder = ("00" + Math.floor(Math.random() * 70)).slice(-2) + "000";
+    const randomFile = randomFolder.slice(0,2) + ('000'+Math.floor(Math.random() * 1000)).slice(-3);
+    return `https://raw.githubusercontent.com/cowdevs/ffhq-dataset-512/main/images512x512/${randomFolder}/${randomFile}.png`;
 }
 
 function revealImages() {

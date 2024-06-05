@@ -80,29 +80,48 @@ section {
         'FILL' 0,
         'wght' 600,
         'GRAD' 0,
-        'opsz' 48;
+        'opsz' 40
 }
 
-.help-button {
-    margin: 0.5vw;
+.icon-button {
     cursor: pointer;
-    transition-duration: 0.4s;
+    transition-duration: 0.1s;
+}
+
+.icon-button:hover, .icon-button:focus {
+    font-variation-settings:
+        'FILL' 1,
+        'wght' 600,
+        'GRAD' 0,
+        'opsz' 40
+}
+
+.icons-container {
+    margin: 1vw;
 }
 
 .heart {
+    font-variation-settings:
+        'FILL' 1,
+        'wght' 600,
+        'GRAD' 0,
+        'opsz' 40;
     cursor: default;
     transition-duration: 0.4s;
     color: crimson;
-    font-variation-settings: 'FILL' 1;
 }
 
 .heart.lost {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 600,
+        'GRAD' 0,
+        'opsz' 40;
     color: #1e1e1e;
-    font-variation-settings: 'FILL' 0;
 }
 
-.help-button:hover, .help-button:focus {
-    font-variation-settings: 'FILL' 1
+.hearts-container {
+    margin: 1vw;
 }
 
 header {
@@ -123,33 +142,38 @@ header {
 }
 
 .header-left {
-    width: 33.333333333%;
+    width: 20%;
     justify-content: flex-start;
 }
 
 .header-center {
-    width: 50%;
+    width: 60%;
     justify-content: center;
 }
 
 .header-right {
-    width: 33.333333333%;
+    width: 20%;
     justify-content: flex-end;
 }
 
-.button {
+button {
     color: #1e1e1e;
     text-align: center;
     cursor: pointer;
     font-size: 1vw;
     transition-duration: 0.4s;
     background-color: white;
-    border: 4px solid #1e1e1e;
+    border: 0.25vw solid #1e1e1e;
     font-family: "Reddit Mono", monospace;
     padding: 0.5vw 1vw;
 }
 
-.button:hover, .button:focus {
+.menu-button {
+    font-size: 0.75vw;
+    padding: 0.375vw 0.75vw;
+}
+
+button:hover, button:focus {
     background-color: #1e1e1e;
     color: white;
 }
@@ -207,21 +231,21 @@ header {
     color: #1e1e1e;
     background-color: #ffffff;
     padding: 20px;
-    border: 0.2vw solid #1e1e1e;
-    width: 40vw;
+    border: 0.25vw solid #1e1e1e;
+    width: 32vw;
 }
 
 h3 {
     color: #1e1e1e;
     font-family: "Edu TAS Beginner", cursive;
-    font-size: 2vw;
+    font-size: 1.5vw;
     margin: 1vw 0;
 }
 
 p, li {
     color: #1e1e1e;
     font-family: "Reddit Mono", monospace;
-    font-size: 1vw;
+    font-size: 0.75vw;
     margin: 1vw 0;
 }
 

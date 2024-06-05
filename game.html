@@ -8,10 +8,14 @@
     <link rel="stylesheet" href="style.css">
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Edu TAS Beginner'>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Reddit Mono">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script src="script.js"></script>
     <script type="text/javascript">
-        window.onload = nextRound;
+        window.onload = () => {
+            loadHearts()
+            nextRound()
+        }
+
     </script>
 </head>
 <body>
@@ -31,20 +35,27 @@
     </div>
 </div>
 
+<div class="popup-body" id="settingsPopup">
+    <div class="popup-content" style="text-align: center">
+        <span class="close-button" onclick="closePopup('settingsPopup')">&times;</span>
+        <button onclick="window.location.href = 'game.html'" class="menu-button" id="titleButton">New Game</button>
+    </div>
+</div>
+    
 <section>
     <header>
         <header class="header-left">
-            <div class="lives">
-                <i class="material-symbols-outlined heart" id="heart1" style="font-size: 2vw">favorite</i>
-                <i class="material-symbols-outlined heart" id="heart2" style="font-size: 2vw">favorite</i>
-                <i class="material-symbols-outlined heart" id="heart3" style="font-size: 2vw">favorite</i>
-            </div>
+            <div class="hearts-container" id="heartsContainer"></div>
         </header>
         <header class="header-center">
             <h1 class="title" id="titleLabel">Find the Deepfake!</h1>
         </header>
         <header class="header-right">
-            <i onclick="openPopup('infoPopup')" class="material-symbols-outlined help-button" style="font-size: 2vw">help</i>
+            <div class="icons-container">
+                <i onclick="openPopup('infoPopup')" class="material-symbols-outlined icon-button" style="font-size: 2vw">help</i>
+                <i onclick="openPopup('settingsPopup')" class="material-symbols-outlined icon-button" style="font-size: 2vw">settings</i>  
+            </div>
+
         </header>
     </header>
 </section>
@@ -58,8 +69,8 @@
 </section>
 
 <section>
-    <button onclick="nextRound()" class="button" id="nextButton" hidden>Next</button>
-    <button onclick="endGame()" class="button" id="finishButton" hidden>Finish</button>
+    <button onclick="nextRound()" id="nextButton" hidden>Next</button>
+    <button onclick="endGame()" id="finishButton" hidden>Finish</button>
 </section>
 
 </body>
