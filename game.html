@@ -36,17 +36,11 @@
 <div class="popup-body" id="settingsPopup">
     <div class="popup-content" style="text-align: center">
         <span class="close-button" onclick="closePopup('settingsPopup')">&times;</span>
-        <label for="difficulties">Difficulty:</label>
-
-        <select name="difficulties" id="difficulties">
-            <option value="easy">Easy</option>
-            <option value="medium">Normal</option>
-            <option value="hard">Hard</option>
-            <option value="very-hard">Sudden Death</option>
-        </select>
+        <label for="difficultyMenu">Mode:</label>
+        <select name="difficultyMenu" id="difficultyMenu"></select>
         <div class="menu-bar">
             <button onclick="startNewGame()" class="menu-button">New Game</button>
-            <button onclick="endGame()" class="menu-button">Quit </button>
+            <button onclick="endGame()" class="menu-button">Quit</button>
         </div>
 
     </div>
@@ -55,7 +49,7 @@
 <section>
     <header>
         <header class="header-left">
-            <div class="hearts-container" id="heartsContainer"></div>
+            <div class="icons-container" id="heartsContainer"></div>
         </header>
         <header class="header-center">
             <h1 class="title" id="titleLabel">Find the Deepfake!</h1>
