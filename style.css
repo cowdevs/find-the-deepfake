@@ -85,6 +85,7 @@ section {
 
 .icon-button {
     cursor: pointer;
+    margin: 0.25vw;
     transition-duration: 0.1s;
 }
 
@@ -98,6 +99,9 @@ section {
 
 .icons-container {
     margin: 1vw;
+    display: flex;
+    align-items: center;
+    align-content: center;
 }
 
 .heart {
@@ -111,6 +115,17 @@ section {
     color: crimson;
 }
 
+.infinity {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 900,
+        'GRAD' 0,
+        'opsz' 40;
+    cursor: default;
+    color: crimson;
+    margin: 0.5vw;
+}
+
 .heart.lost {
     font-variation-settings:
         'FILL' 0,
@@ -118,10 +133,6 @@ section {
         'GRAD' 0,
         'opsz' 40;
     color: #1e1e1e;
-}
-
-.hearts-container {
-    margin: 1vw;
 }
 
 header {

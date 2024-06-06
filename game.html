@@ -27,7 +27,7 @@
             <li><strong>Look at the limbs</strong>: AI is infamous for turning hands, arms, feet, and legs into jumbled-up abominations, from extra fingers to crooked joints. If you spot any abnormal appendages, you can be certain that you&#39;ve found an AI-generated image.</li>
             <li><strong>Look at the accessories</strong>: Although the AI can generate extremely realistic faces, it struggles with creating clothing and accessories due to problems with symmetry. If you look closely, you might notice unusual headwear, inconsistent earrings, misshapen glasses, and more.</li>
             <li><strong>Look at the surroundings</strong>: Aside from the main figure, the AI may try to generate other people on the sides. But, these secondary subjects are often horribly disfigured. Coming across one is a very obvious sign of an artificial image.</li>
-            <li><strong>Look at the background</strong>: AI-generated images will almost always have a blurry background, or simply a solid color. However, these are not definite indicators as they can occur in real images too. Instead, look out for strange patterns and shapes that you wouldn&#39;t expect to see in real life.</li>
+            <li><strong>Look at the background</strong>: AI-generated images will <em>always</em> have a blurry background, or simply a solid color. However, these are not definite indicators as they can occur in real images too. Instead, look out for strange patterns and shapes that you wouldn&#39;t expect to see in real life.</li>
         </ul>
         <p>These are just a few methods for identifying a deepfake. Remember, you can always rely on your instinct or process of elimination. Good luck!</p>
     </div>
@@ -36,17 +36,11 @@
 <div class="popup-body" id="settingsPopup">
     <div class="popup-content" style="text-align: center">
         <span class="close-button" onclick="closePopup('settingsPopup')">&times;</span>
-        <label for="difficulties">Difficulty:</label>
-
-        <select name="difficulties" id="difficulties">
-            <option value="easy">Easy</option>
-            <option value="medium" selected>Normal</option>
-            <option value="hard">Hard</option>
-            <option value="very-hard">Sudden Death</option>
-        </select>
+        <label for="difficultyMenu">Mode:</label>
+        <select name="difficultyMenu" id="difficultyMenu"></select>
         <div class="menu-bar">
             <button onclick="startNewGame()" class="menu-button">New Game</button>
-            <button onclick="window.location.href = 'index.html'" class="menu-button">Quit</button>
+            <button onclick="endGame()" class="menu-button">Quit</button>
         </div>
 
     </div>
@@ -55,7 +49,7 @@
 <section>
     <header>
         <header class="header-left">
-            <div class="hearts-container" id="heartsContainer"></div>
+            <div class="icons-container" id="heartsContainer"></div>
         </header>
         <header class="header-center">
             <h1 class="title" id="titleLabel">Find the Deepfake!</h1>
